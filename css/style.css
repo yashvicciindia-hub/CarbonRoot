@@ -175,6 +175,8 @@ p { margin: 0 0 1em; }
 .btn-outline:hover { border-color: var(--moss); color: var(--moss); }
 .section--dark .btn-outline { border-color: var(--line-dark); color: var(--parchment); }
 .section--dark .btn-outline:hover { border-color: var(--moss-light); color: var(--moss-light); }
+.hero .btn-outline { border-color: var(--line-dark); color: var(--parchment); }
+.hero .btn-outline:hover { border-color: var(--moss-light); color: var(--moss-light); }
 .btn-arrow { transition: transform var(--fast) var(--ease); }
 .btn:hover .btn-arrow { transform: translateX(3px); }
 .btn[disabled] { opacity: 0.6; cursor: not-allowed; }
@@ -913,6 +915,8 @@ table.compare tbody tr.row-highlight td:first-child { font-weight: 700; color: v
 .nav-explore-trigger span {
   font-size: 12px;
   transition: transform var(--fast) var(--ease);
+  position: relative;
+  top: -2px;
 }
 .nav-explore-trigger:hover,
 .nav-explore-trigger[aria-expanded="true"],
