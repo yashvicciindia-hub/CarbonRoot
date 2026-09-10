@@ -85,7 +85,7 @@ retriever = vectorstore.as_retriever(
 llm = ChatGoogleGenerativeAI(
     model= os.getenv(
         "GEMINI_MODEL",
-        "gemini-2.5-flash"
+        "gemini-3.6-flash"
     ),
 
     temperature=0.2,
