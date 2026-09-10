@@ -10,7 +10,7 @@ class CarbonRootChatbot {
     this.apiUrl =
       options.apiUrl ||
       window.CARBONROOT_CHAT_API_URL ||
-      "/api/chat";
+      "https://carbonroot.onrender.com/api/chat";
 
     this.botName =
       options.botName ||
