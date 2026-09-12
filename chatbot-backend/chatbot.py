@@ -203,7 +203,22 @@ CARBONROOT CONTEXT:
 )
 ])
 
+def extract_text(content):
+    """Newer Gemini models can return content as a list of blocks
+    instead of a plain string. Normalize either case to plain text."""
+    if isinstance(content, str):
+        return content
 
+    if isinstance(content, list):
+        parts = []
+        for block in content:
+            if isinstance(block, str):
+                parts.append(block)
+            elif isinstance(block, dict) and "text" in block:
+                parts.append(block["text"])
+        return "".join(parts)
+
+    return str(content)
 
 
 def ask_carbonroot(question: str):
@@ -247,5 +262,5 @@ def ask_carbonroot(question: str):
     )
 
 
-    return response.content
+    return extract_text(response.content)
     

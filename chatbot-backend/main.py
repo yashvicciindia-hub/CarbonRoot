@@ -31,7 +31,7 @@ app.add_middleware(
         "http://localhost:3000",
         "http://127.0.0.1:3000",
 
-        # Your deployed OriginX website
+        
         "https://carbon-root-eight.vercel.app"
     ],
 
@@ -110,3 +110,9 @@ async def chat(request: ChatRequest):
             status_code=500,
             detail="Unable to process the request."
         )
+
+
+    except Exception as error:
+     import traceback
+     traceback.print_exc()
+     raise HTTPException(status_code=500, detail=f"DEBUG: {str(error)}")
